@@ -72,7 +72,7 @@ class Conversation:
                     ret += role + message + sep
                 else:
                     ret += role
-        elif self.sep_style == SeparatorStyle.MPT:
+        elif self.sep_style == SeparatorStyle.MPT or self.sep_style == SeparatorStyle.AUTO:
             ret = self.system + self.sep
             for role, message in messages:
                 if message:

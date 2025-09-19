@@ -95,6 +95,7 @@ class ChatCompletionRequest(BaseModel):
         "VILA1.5-13B-AWQ",
         "VILA1.5-40B",
         "VILA1.5-40B-AWQ",
+        "VILA-HD-8B-PS3-4K-SigLIP2",
     ]
     messages: List[ChatMessage]
     max_tokens: Optional[int] = 512
@@ -311,8 +312,8 @@ if __name__ == "__main__":
 
     host = os.getenv("VILA_HOST", "0.0.0.0")
     port = os.getenv("VILA_PORT", 8000)
-    model_path = os.getenv("VILA_MODEL_PATH", "Efficient-Large-Model/VILA1.5-3B")
-    conv_mode = os.getenv("VILA_CONV_MODE", "vicuna_v1")
+    model_path = os.getenv("VILA_MODEL_PATH", "nvidia/VILA-HD-8B-PS3-4K-SigLIP2")
+    conv_mode = os.getenv("VILA_CONV_MODE", "auto")
     workers = os.getenv("VILA_WORKERS", 1)
 
     parser = argparse.ArgumentParser()
